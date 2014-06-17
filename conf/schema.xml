@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<schema name="usr-tag" version="1.0">
+  <fields>
+    <field name="uid"      type="str"    length="0"  indexed="false"  stored="true"   filter="false"/> 
+    <field name="tag"      type="str"    length="0"  indexed="true"   stored="true"   filter="true"/> 
+    <field name="pkg"      type="str"    length="0"  indexed="false"  stored="true"   filter="true"/> 
+    <field name="cert"     type="str"    length="0"  indexed="false"  stored="true"   filter="false"/> 
+    <field name="token"    type="str"    length="0"  indexed="false"  stored="true"   filter="false"/> 
+    <field name="region"   type="str"    length="0"  indexed="true"   stored="false"  filter="true"/> 
+    <field name="version"  type="str"    length="0"  indexed="false"  stored="true"   filter="true"/> 
+    <field name="devid"    type="str"    length="0"  indexed="false"  stored="true"   filter="false"/> 
+    <field name="platform" type="uint8"  length="1"  indexed="true"   stored="true"   filter="true"/> 
+  </fields>
+  <prime key="uid"/>
+</schema>
+
