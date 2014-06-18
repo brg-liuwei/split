@@ -3,6 +3,7 @@ package main
 import (
 	"config"
 	"fmt"
+	"kv"
 	"util"
 )
 
@@ -20,4 +21,13 @@ func main() {
 	util.WriteVint(int64(-1), buf)
 	v, _, _ := util.ReadVint(buf)
 	fmt.Println("v = ", v)
+
+	name := "testDb"
+	kv.Open(&name)
+	k := "hello"
+	val := "world"
+	kv.Put(&k, &val)
+	v1, _ := kv.Get(&k)
+	println("v1 = ", v1)
+	kv.Close()
 }
