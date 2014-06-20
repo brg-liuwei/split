@@ -43,6 +43,18 @@ func TestKv(t *testing.T) {
 		t.Error("v = ", v, ", should be ", v2)
 	}
 
+	err = Put(&k1, &v1)
+	if err != nil {
+		t.Error("Put k1, v1 error: ", err)
+	}
+	v, err = Get(&k1)
+	if err != nil {
+		t.Error("Get k1 error: ", err)
+	}
+	if v != v1 {
+		t.Error("v = ", v, ", should be ", v1)
+	}
+
 	err = Delete(&k1)
 	if err != nil {
 		t.Error("delete k1 error: ", err)

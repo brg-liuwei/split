@@ -11,5 +11,7 @@ cd src/
 go test config
 go test util
 go test kv
+go test syncio
+go test document
 cd ..
 go build -o bin/splitService src/main.go

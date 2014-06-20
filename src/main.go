@@ -4,8 +4,11 @@ import (
 	"config"
 	"fmt"
 	"kv"
+	"syncio"
 	"util"
 )
+
+var f syncio.SyncFile
 
 func main() {
 	xml := config.NewXmlDecoder("conf/schema.xml")
@@ -30,4 +33,5 @@ func main() {
 	v1, _ := kv.Get(&k)
 	println("v1 = ", v1)
 	kv.Close()
+	_ = f
 }
